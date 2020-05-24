@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="5" failures="0" name="com.ptt.test.BmbServiceTest" time="5.596" errors="1" skipped="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="D:\Java\jdk1.8.0_221\jre\bin"/>
+    <property name="java.vm.version" value="25.221-b11"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\IDEA Projects\Mybatis\xzy_Spring"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="D:\IDEA Projects\Mybatis\xzy_Spring"/>
+    <property name="java.runtime.version" value="1.8.0_221-b11"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="D:\Java\jdk1.8.0_221\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\djy\AppData\Local\Temp\"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="maven.ext.class.path" value="D:\IDEA\IntelliJ IDEA 2019.2.3\plugins\maven\lib\maven-event-listener.jar"/>
+    <property name="classworlds.conf" value="D:\IDEA\IntelliJ IDEA 2019.2.3\plugins\maven\lib\maven3\bin\m2.conf"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.library.path" value="D:\Java\jdk1.8.0_221\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;D:\Mysql\Mysql Server5.5\bin;D:\Java\apache-maven-3.6.2-bin\apache-maven-3.6.2\bin;C:\Users\djy\AppData\Local\Microsoft\WindowsApps;D:\Java\jdk1.8.0_221\bin;D:\Java\jdk1.8.0_221\jre\bin;F:\Chrome文件夹\Bandizip解压\;;."/>
+    <property name="maven.conf" value="D:\IDEA\IntelliJ IDEA 2019.2.3\plugins\maven\lib\maven3/conf"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.0"/>
+    <property name="user.home" value="C:\Users\djy"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="djy"/>
+    <property name="java.class.path" value="D:\IDEA\IntelliJ IDEA 2019.2.3\plugins\maven\lib\maven3\boot\plexus-classworlds-2.6.0.jar;D:\IDEA\IntelliJ IDEA 2019.2.3\lib\idea_rt.jar"/>
+    <property name="idea.version2019.2.3" value="true"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="D:\Java\jdk1.8.0_221\jre"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version2019.2.3 package"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_221"/>
+    <property name="java.ext.dirs" value="D:\Java\jdk1.8.0_221\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="D:\Java\jdk1.8.0_221\jre\lib\resources.jar;D:\Java\jdk1.8.0_221\jre\lib\rt.jar;D:\Java\jdk1.8.0_221\jre\lib\sunrsasign.jar;D:\Java\jdk1.8.0_221\jre\lib\jsse.jar;D:\Java\jdk1.8.0_221\jre\lib\jce.jar;D:\Java\jdk1.8.0_221\jre\lib\charsets.jar;D:\Java\jdk1.8.0_221\jre\lib\jfr.jar;D:\Java\jdk1.8.0_221\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="D:\IDEA\IntelliJ IDEA 2019.2.3\plugins\maven\lib\maven3"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase classname="com.ptt.test.BmbServiceTest" name="testdeleteBmb" time="4.376"/>
+  <testcase classname="com.ptt.test.BmbServiceTest" name="testUpdateBmb" time="0.526">
+    <error type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.ptt.test.BmbServiceTest.testUpdateBmb(BmbServiceTest.java:55)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</error>
+    <system-out>2020-05-22 17:04:54,515 1673   [           main] DEBUG icPooledDataSourceManagerMBean  - MBean: com.mchange.v2.c3p0:type=PooledDataSource[1hge1d1aagjlwk3qqtyh8|6236eb5f] registered.
+2020-05-22 17:04:54,568 1726   [           main] DEBUG resourcepool.BasicResourcePool  - incremented pending_acquires: 1
+2020-05-22 17:04:54,568 1726   [           main] DEBUG resourcepool.BasicResourcePool  - incremented pending_acquires: 2
+2020-05-22 17:04:54,569 1727   [           main] DEBUG resourcepool.BasicResourcePool  - incremented pending_acquires: 3
+2020-05-22 17:04:54,570 1728   [           main] DEBUG resourcepool.BasicResourcePool  - com.mchange.v2.resourcepool.BasicResourcePool@6bf0219d config: [start -&gt; 3; min -&gt; 3; max -&gt; 15; inc -&gt; 3; num_acq_attempts -&gt; 30; acq_attempt_delay -&gt; 1000; check_idle_resources_delay -&gt; 0; mox_resource_age -&gt; 0; max_idle_time -&gt; 0; excess_max_idle_time -&gt; 0; destroy_unreturned_resc_time -&gt; 0; expiration_enforcement_delay -&gt; 0; break_on_acquisition_failure -&gt; false; debug_store_checkout_exceptions -&gt; false]
+2020-05-22 17:04:54,571 1729   [           main] INFO  l.AbstractPoolBackedDataSource  - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -&gt; 3, acquireRetryAttempts -&gt; 30, acquireRetryDelay -&gt; 1000, autoCommitOnClose -&gt; false, automaticTestTable -&gt; null, breakAfterAcquireFailure -&gt; false, checkoutTimeout -&gt; 0, connectionCustomizerClassName -&gt; null, connectionTesterClassName -&gt; com.mchange.v2.c3p0.impl.DefaultConnectionTester, dataSourceName -&gt; 1hge1d1aagjlwk3qqtyh8|6236eb5f, debugUnreturnedConnectionStackTraces -&gt; false, description -&gt; null, driverClass -&gt; com.mysql.cj.jdbc.Driver, factoryClassLocation -&gt; null, forceIgnoreUnresolvedTransactions -&gt; false, identityToken -&gt; 1hge1d1aagjlwk3qqtyh8|6236eb5f, idleConnectionTestPeriod -&gt; 0, initialPoolSize -&gt; 3, jdbcUrl -&gt; jdbc:mysql://49.235.187.63:3306/jnshutest?         characterEncoding=UTF-8, maxAdministrativeTaskTime -&gt; 0, maxConnectionAge -&gt; 0, maxIdleTime -&gt; 0, maxIdleTimeExcessConnections -&gt; 0, maxPoolSize -&gt; 15, maxStatements -&gt; 0, maxStatementsPerConnection -&gt; 0, minPoolSize -&gt; 3, numHelperThreads -&gt; 3, numThreadsAwaitingCheckoutDefaultUser -&gt; 0, preferredTestQuery -&gt; null, properties -&gt; {user=******, password=******}, propertyCycle -&gt; 0, testConnectionOnCheckin -&gt; false, testConnectionOnCheckout -&gt; false, unreturnedConnectionTimeout -&gt; 0, usesTraditionalReflectiveProxies -&gt; false ]
+2020-05-22 17:04:54,589 1747   [           main] DEBUG resourcepool.BasicResourcePool  - acquire test -- pool size: 0; target_pool_size: 3; desired target? 1
+2020-05-22 17:04:54,589 1747   [           main] DEBUG resourcepool.BasicResourcePool  - awaitAvailable(): [unknown]
+2020-05-22 17:04:54,589 1747   [           main] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@6bf0219d [managed: 0, unused: 0, excluded: 0]
+2020-05-22 17:04:54,779 1937   [r$PoolThread-#2] DEBUG .impl.C3P0PooledConnectionPool  - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@255adf7a.acquireResource() returning. 
+2020-05-22 17:04:54,781 1939   [r$PoolThread-#2] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@6bf0219d [managed: 1, unused: 1, excluded: 0]
+2020-05-22 17:04:54,782 1940   [r$PoolThread-#2] DEBUG resourcepool.BasicResourcePool  - decremented pending_acquires: 2
+2020-05-22 17:04:54,782 1940   [           main] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@6bf0219d [managed: 1, unused: 0, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@4ea2d6aa)
+2020-05-22 17:04:54,856 2014   [r$PoolThread-#0] DEBUG .impl.C3P0PooledConnectionPool  - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@255adf7a.acquireResource() returning. 
+2020-05-22 17:04:54,856 2014   [r$PoolThread-#1] DEBUG .impl.C3P0PooledConnectionPool  - com.mchange.v2.c3p0.impl.C3P0PooledConnectionPool$1PooledConnectionResourcePoolManager@255adf7a.acquireResource() returning. 
+2020-05-22 17:04:54,856 2014   [r$PoolThread-#0] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@6bf0219d [managed: 2, unused: 1, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@4ea2d6aa)
+2020-05-22 17:04:54,857 2015   [r$PoolThread-#1] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@6bf0219d [managed: 3, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@4ea2d6aa)
+2020-05-22 17:04:54,858 2016   [r$PoolThread-#1] DEBUG resourcepool.BasicResourcePool  - decremented pending_acquires: 1
+2020-05-22 17:04:54,858 2016   [r$PoolThread-#0] DEBUG resourcepool.BasicResourcePool  - decremented pending_acquires: 0
+2020-05-22 17:04:54,869 2027   [           main] DEBUG resourcepool.BasicResourcePool  - trace com.mchange.v2.resourcepool.BasicResourcePool@6bf0219d [managed: 3, unused: 2, excluded: 0] (e.g. com.mchange.v2.c3p0.impl.NewPooledConnection@4ea2d6aa)
+</system-out>
+  </testcase>
+  <testcase classname="com.ptt.test.BmbServiceTest" name="testListAllBmbs" time="0.277"/>
+  <testcase classname="com.ptt.test.BmbServiceTest" name="testGetBmbById" time="0.252"/>
+  <testcase classname="com.ptt.test.BmbServiceTest" name="testSaveBmb" time="0.165"/>
+</testsuite>
