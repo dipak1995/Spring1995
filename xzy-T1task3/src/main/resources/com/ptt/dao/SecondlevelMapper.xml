@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ptt.dao.SecondlevelMapper">
+
+    <!--增加一个-->
+    <insert id="addSecondlevel" parameterType="Secondlevel" useGeneratedKeys="true" keyProperty="id">
+      insert into secondlevel(second_title,create_at,create_by,update_by,f_id)
+      values (#{secondTitle}, now(), #{createBy},#{updateBy},#{fId})
+   </insert>
+
+    <!--根据id删除一个-->
+    <delete id="deleteSecondlevelById" parameterType="Integer">
+      delete from secondlevel where id=#{id}
+   </delete>
+
+    <!--修改一个-->
+    <update id="updateSecondlevel" parameterType="Secondlevel" >
+        update secondlevel set second_title = #{secondTitle}, update_by = #{updateBy},f_id = #{fId} where id = #{id}
+    </update>
+
+    <!--根据id查询,返回一个-->
+    <select id="getSecondlevelById" resultType="Secondlevel">
+      select * from Secondlevel
+      where id = #{id}
+   </select>
+
+    <!--查询全部-->
+    <select id="queryAllSecondlevel" resultMap="SecondFirst">
+      SELECT s.id id,s.second_title second_title,s.create_at create_at,s.update_at update_at,f.first_title first_title
+        from secondlevel s join firstlevel f
+          on s.f_id = f.id
+    </select>
+
+    <resultMap id="SecondFirst" type="Secondlevel">
+        <id property="id" column="id"/>
+        <result property="secondTitle" column="second_title"/>
+        <result property="createAt" column="create_at"/>
+        <result property="updateAt" column="update_at"/>
+        <!--关联对象property 关联对象在Student实体类中的属性-->
+        <association property="firstlevel" javaType="Firstlevel">
+            <result property="firstTitle" column="first_title"/>
+        </association>
+    </resultMap>
+</mapper>

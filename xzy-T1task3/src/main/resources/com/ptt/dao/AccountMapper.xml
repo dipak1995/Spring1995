@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ptt.dao.AccountMapper">
+
+    <!--增加一个-->
+    <insert id="addAccount" parameterType="Account" useGeneratedKeys="true" keyProperty="id">
+      insert into account(name,create_at,create_by,r_id)
+      values (#{name}, now(), #{createBy},#{rId})
+   </insert>
+
+    <!--根据id删除一个-->
+    <delete id="deleteAccountById" parameterType="Integer">
+      delete from account where id=#{id}
+   </delete>
+
+    <!--修改一个-->
+    <update id="updateAccount" parameterType="Account" >
+        update account set name = #{name}, create_by = #{createBy} where id = #{id}
+    </update>
+
+    <!--根据id查询,返回一个-->
+    <select id="getAccountById" resultType="Account">
+      select * from account
+      where id = #{id}
+   </select>
+
+    <!--查询全部-->
+    <select id="queryAllAccount" resultMap="AccountRole">
+      SELECT a.id id,a.name name,a.create_at create_at,a.create_by cerate_by,r.roletype roletype
+        from account a join role r
+          on a.r_id = r.id
+    </select>
+
+    <resultMap id="AccountRole" type="Account">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="createAt" column="create_at"/>
+        <result property="createBy" column="create_by"/>
+        <!--关联对象property 关联对象在Student实体类中的属性-->
+        <association property="role" javaType="Role">
+            <result property="roletype" column="roletype"/>
+        </association>
+    </resultMap>
+
+</mapper>

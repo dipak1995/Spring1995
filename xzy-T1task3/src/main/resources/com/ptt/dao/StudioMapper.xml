@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ptt.dao.StudioMapper">
+
+    <!--增加一个-->
+    <insert id="addStudio" parameterType="Studio" useGeneratedKeys="true" keyProperty="id">
+      insert into studio(introduction_type,picture_link,state,create_at,create_by,update_by)
+      values (#{introductionType},#{pictureLink},#{state}, now(), #{createBy},#{updateBy})
+   </insert>
+
+    <!--根据id删除一个-->
+    <delete id="deleteStudioById" parameterType="Integer">
+      delete from studio where id=#{id}
+   </delete>
+
+    <!--修改一个-->
+    <update id="updateStudio" parameterType="Studio" >
+        update studio set  picture_link = #{pictureLink},state = #{state},
+        introduction = #{introduction},update_by = #{updateBy}  where id = #{id}
+    </update>
+
+    <!--根据id查询,返回一个-->
+    <select id="getStudioById" resultType="Studio">
+      select * from studio
+      where id = #{id}
+   </select>
+
+    <!--查询全部-->
+    <select id="queryAllStudio" resultType="Studio">
+      SELECT * from studio
+   </select>
+
+</mapper>

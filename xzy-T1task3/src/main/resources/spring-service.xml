@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans.xsd
+   http://www.springframework.org/schema/context
+   http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 扫描service相关的bean -->
+    <context:component-scan base-package="com.ptt.service" />
+
+    <!--MessServiceImpl注入到IOC容器中-->
+    <bean id="MessServiceImpl" class="com.ptt.service.MessServiceImpl">
+        <property name="messMapper" ref="messMapper"/>
+    </bean>
+
+    <bean id="FirstlevelServiceImpl" class="com.ptt.service.FirstlevelServiceImpl">
+        <property name="firstlevelMapper" ref="firstlevelMapper"/>
+    </bean>
+
+    <bean id="SecondlevelServiceImpl" class="com.ptt.service.SecondlevelServiceImpl">
+        <property name="secondlevelMapper" ref="secondlevelMapper"/>
+    </bean>
+
+    <bean id="ThirdlevelServiceImpl" class="com.ptt.service.ThirdlevelServiceImpl">
+        <property name="thirdlevelMapper" ref="thirdlevelMapper"/>
+    </bean>
+
+    <bean id="BannerServiceImpl" class="com.ptt.service.BannerServiceImpl">
+        <property name="bannerMapper" ref="bannerMapper"/>
+    </bean>
+
+    <bean id="StudioServiceImpl" class="com.ptt.service.StudioServiceImpl">
+        <property name="studioMapper" ref="studioMapper"/>
+    </bean>
+
+    <bean id="AccountServiceImpl" class="com.ptt.service.AccountServiceImpl">
+        <property name="accountMapper" ref="accountMapper"/>
+    </bean>
+
+    <bean id="RoleServiceImpl" class="com.ptt.service.RoleServiceImpl">
+        <property name="roleMapper" ref="roleMapper"/>
+    </bean>
+
+    <bean id="ModelServiceImpl" class="com.ptt.service.ModelServiceImpl">
+        <property name="modelMapper" ref="modelMapper"/>
+    </bean>
+
+
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 注入数据库连接池 -->
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+</beans>

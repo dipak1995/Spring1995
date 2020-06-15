@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ptt.dao.ModelMapper">
+
+    <!--增加一个-->
+    <insert id="addModel" parameterType="Model" useGeneratedKeys="true" keyProperty="id">
+      insert into model(model_name,URL,create_at,create_by)
+      values (#{modelName},#{URL} ,now(),#{createBy})
+   </insert>
+
+    <!--根据id删除一个-->
+    <delete id="deleteModelById" parameterType="Integer">
+      delete from model where id=#{id}
+   </delete>
+
+    <!--修改/回复一个-->
+    <update id="updateModel" parameterType="Model" >
+        update model set model_name = #{modelName},URL = #{URL}, create_by = #{createBy} where id = #{id}
+    </update>
+
+    <!--根据id查询,返回一个-->
+    <select id="getModelById" resultType="Model">
+      select * from model
+      where id = #{id}
+    </select>
+
+    <!--查询全部-->
+    <select id="queryAllModel" resultType="Model">
+      SELECT * from model
+   </select>
+
+</mapper>

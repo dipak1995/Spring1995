@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ptt.dao.FirstlevelMapper">
+
+    <!--增加一个-->
+    <insert id="addFirstlevel" parameterType="Firstlevel" useGeneratedKeys="true" keyProperty="id">
+      insert into firstlevel(first_title,create_at,create_by,update_by)
+      values (#{firstTitle}, now(), #{createBy},#{updateBy})
+   </insert>
+
+    <!--根据id删除一个-->
+    <delete id="deleteFirstlevelById" parameterType="Integer">
+      delete from firstlevel where id=#{id}
+   </delete>
+
+    <!--修改一个-->
+    <update id="updateFirstlevel" parameterType="Firstlevel" >
+        update firstlevel set first_title = #{firstTitle}, update_by = #{updateBy} where id = #{id}
+    </update>
+
+    <!--根据id查询,返回一个-->
+    <select id="getFirstlevelById" resultType="Firstlevel">
+      select * from firstlevel
+      where id = #{id}
+   </select>
+
+    <!--查询全部-->
+    <select id="queryAllFirstlevel" resultType="Firstlevel">
+      SELECT * from firstlevel
+   </select>
+
+</mapper>

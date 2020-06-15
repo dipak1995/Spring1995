@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ptt.dao.MessMapper">
+
+    <!--增加一个留言Mess-->
+    <insert id="addMess" parameterType="Mess" useGeneratedKeys="true" keyProperty="id">
+      insert into mess(tourist,message,t_id,create_at)
+      values (#{tourist}, #{message},#{tId},now())
+   </insert>
+
+    <!--根据id删除一个-->
+    <delete id="deleteMessById" parameterType="Integer">
+      delete from mess where id=#{id}
+   </delete>
+
+    <!--修改/回复一个留言-->
+    <update id="updateMess" parameterType="Mess" >
+        update mess set state = #{state},reply_content = #{replyContent}, reply_name = #{replyName} where id = #{id}
+    </update>
+
+    <!--根据id查询,返回一个-->
+    <select id="getMessById" resultType="Mess">
+      select * from mess
+      where id = #{id}
+    </select>
+
+    <!--查询全部-->
+    <select id="queryAllMess" resultType="Mess">
+      SELECT * from mess
+   </select>
+
+</mapper>

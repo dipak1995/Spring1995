@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ptt.dao.RoleMapper">
+
+    <!--增加一个-->
+    <insert id="addRole" parameterType="Role" useGeneratedKeys="true" keyProperty="id">
+      insert into role(roletype,create_at,create_by)
+      values (#{roletype} ,now(),#{createBy})
+   </insert>
+
+    <!--根据id删除一个-->
+    <delete id="deleteRoleById" parameterType="Integer">
+      delete from role where id=#{id}
+   </delete>
+
+    <!--修改/回复一个留言-->
+    <update id="updateRole" parameterType="Role" >
+        update role set roletype = #{roletype}, create_by = #{createBy} where id = #{id}
+    </update>
+
+    <!--根据id查询,返回一个-->
+    <select id="getRoleById" resultType="Role">
+      select * from role
+      where id = #{id}
+    </select>
+
+    <!--查询全部-->
+    <select id="queryAllRole" resultMap="RoleModel">
+      SELECT r.id id,r.roletype roletype,m.model_name model_name
+       FROM role r
+         left outer join rolemodel rm on r.id = rm.r_id
+           left outer join model m on m.id = rm.m_id
+   </select>
+
+    <resultMap id="RoleModel" type="Role">
+        <result  property="id" column="id"/>
+        <result  property="roletype" column="roletype"/>
+        <collection property="models" ofType="Model">
+            <id  property="id" column="id"/>
+            <result property="modelName" column="model_name" />
+        </collection>
+    </resultMap>
+</mapper>

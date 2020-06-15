@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="logImpl" value="LOG4J"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <!--    别名-->
+    <typeAliases>
+        <package name="com.ptt.pojo"/>
+    </typeAliases>
+
+
+    <mappers>
+        <mapper class="com.ptt.dao.MessMapper"/>
+        <mapper class="com.ptt.dao.FirstlevelMapper"/>
+        <mapper class="com.ptt.dao.SecondlevelMapper"/>
+        <mapper class="com.ptt.dao.ThirdlevelMapper"/>
+        <mapper class="com.ptt.dao.BannerMapper"/>
+        <mapper class="com.ptt.dao.StudioMapper"/>
+        <mapper class="com.ptt.dao.AccountMapper"/>
+        <mapper class="com.ptt.dao.RoleMapper"/>
+        <mapper class="com.ptt.dao.ModelMapper"/>
+    </mappers>
+
+</configuration>

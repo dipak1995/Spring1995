@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ptt.dao.ThirdlevelMapper">
+
+    <!--增加一个-->
+    <insert id="addThirdlevel" parameterType="Thirdlevel" useGeneratedKeys="true" keyProperty="id">
+      insert into thirdlevel(work,state,introduction,picturelink,video_link,create_at,create_by,update_by,s_id)
+      values (#{work},#{state},#{introduction},#{picturelink},#{videoLink}, now(), #{createBy},#{updateBy},#{sId})
+   </insert>
+
+    <!--根据id删除一个-->
+    <delete id="deleteThirdlevelById" parameterType="Integer">
+      delete from thirdlevel where id=#{id}
+   </delete>
+
+    <!--修改一个-->
+    <update id="updateThirdlevel" parameterType="Thirdlevel" >
+        update thirdlevel set work = #{work}, state = #{state}, update_by = #{updateBy},s_id = #{sId} where id = #{id}
+    </update>
+
+    <!--根据id查询,返回一个-->
+    <select id="getThirdlevelById" resultType="Thirdlevel">
+      select * from Thirdlevel
+      where id = #{id}
+   </select>
+
+    <!--查询全部-->
+    <select id="queryAllThirdlevel" resultMap="ThirdSecondFirst">
+      SELECT t.id id,t.work work,s.second_title second_title,f.first_title first_title,
+      t.state state,t.picturelink picturelink,t.introduction introduction,
+      t.create_at create_at,t.update_at update_at,t.create_by create_by,t.update_by update_by
+           from thirdlevel t
+             join secondlevel s
+               on t.s_id = s.id
+                 join firstlevel f
+                   on s.f_id = f.id
+    </select>
+
+    <resultMap id="ThirdSecondFirst" type="Thirdlevel">
+        <id property="id" column="id"/>
+        <result property="work" column="work"/>
+        <result property="state" column="state"/>
+        <result property="introduction" column="introduction"/>
+        <result property="picturelink" column="picturelink"/>
+        <result property="createAt" column="create_at"/>
+        <result property="updateAt" column="update_at"/>
+        <result property="createBy" column="create_by"/>
+        <result property="updateBy" column="update_by"/>
+
+        <!--关联对象property 关联对象在Student实体类中的属性-->
+        <association property="secondlevel" javaType="Secondlevel">
+            <result property="secondTitle" column="second_title"/>
+        </association>
+
+        <association property="firstlevel" javaType="Firstlevel">
+            <result property="firstTitle" column="first_title"/>
+        </association>
+    </resultMap>
+</mapper>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ptt.dao.BannerMapper">
+
+    <!--增加一个-->
+    <insert id="addBanner" parameterType="Banner" useGeneratedKeys="true" keyProperty="id">
+      insert into banner(picture,url,state,create_at,create_by,update_by)
+      values (#{picture},#{url},#{state}, now(), #{createBy},#{updateBy})
+   </insert>
+
+    <!--根据id删除一个-->
+    <delete id="deleteBannerById" parameterType="Integer">
+      delete from banner where id=#{id}
+   </delete>
+
+    <!--修改一个-->
+    <update id="updateThirdlevel" parameterType="Banner" >
+        update banner set picture = #{picture}, url = #{url}, update_by = #{updateBy} where id = #{id}
+    </update>
+
+    <!--根据id查询,返回一个-->
+    <select id="getBannerById" resultType="Banner">
+      select * from banner
+      where id = #{id}
+   </select>
+
+    <!--查询全部-->
+    <select id="queryAllBanner" resultType="Banner">
+      SELECT * from banner
+   </select>
+
+</mapper>
